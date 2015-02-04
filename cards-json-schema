@@ -7,10 +7,6 @@
       "id": "id",
       "type": "string"
     },
-    "color": {
-      "id": "color",
-      "type": "string"
-    },
     "name": {
       "id": "name",
       "type": "string"
@@ -104,7 +100,6 @@
   "additionalProperties": false,
   "required": [
     "id",
-    "color",
     "name",
     "direction",
     "active",
