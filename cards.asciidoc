@@ -371,7 +371,7 @@ include::{generated}/cards-get-recipientcards/request.asciidoc[]
 include::{generated}/cards-get-recipientcards/response.asciidoc[]
 
 
-==== Получение параметров заданной карты
+==== Получение параметров заданной карты (id = 1)
 ....
 Клиент получает все данные по своей карте.
 ....
