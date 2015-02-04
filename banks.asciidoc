@@ -39,23 +39,23 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/banks-json-scheme[JSON schema]
 | List
 | Информация о возможных типах операций
 
-| $$operation
+|   $$operation
 | String
 | Тип операции
 
-| $$comment
+|   $$comment
 | String
 | Комментарий для клиента
 
-| $$severity
+|   $$severity
 | Object
 | Важность комментария
 
-| $$$level
+|    $$$level
 | String
 | Уровень важности комментария
 
-| $$$description
+|    $$$description
 | String
 | Описание уровня важности комментария
 |===
