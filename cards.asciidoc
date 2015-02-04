@@ -157,12 +157,10 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 [[resources-card-get]]
 === Метод GET
 
-==== Получение списка всех активных карт клиента
+
+==== Получение списка всех карт клиента
 ....
-Клиент получает список всех своих активных (active = true) карт:
-  карты Альфа-Банка (alfabank = true),
-  карты, с которых он делал переводы (direction = sender),
-  карты, на которые делал переводы (direction = recipient).
+Клиент получает список всех своих карт
 ....
 ===== Example request
 
@@ -173,6 +171,75 @@ include::{generated}/cards-get/request.asciidoc[]
 include::{generated}/cards-get/response.asciidoc[]
 
 
+==== Получение списка всех активных карт клиента
+....
+Клиент получает список всех своих активных (active = true) карт
+....
+===== Example request
+
+include::{generated}/cards-get-activecards/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-activecards/response.asciidoc[]
+
+
+==== Получение списка всех активных альфабанковских карт клиента 
+....
+Клиент получает список всех своих активных карт Альфа-Банка
+(active = true и alfabank = true) 
+....
+===== Example request
+
+include::{generated}/cards-get-activealfacards/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-activealfacards/response.asciidoc[]
+
+
+==== Получение списка всех валютных карт клиента 
+....
+Клиент получает список всех своих валютных карт
+(currency/code != RUR) 
+....
+===== Example request
+
+include::{generated}/cards-get-notrurcards/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-notrurcards/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента, выпущенных зарубежным банком  
+....
+Клиент получает список всех карт, выпущенных зарубежным банком  
+(bank/countryCode != 7) 
+....
+===== Example request
+
+include::{generated}/cards-get-notrussianbankcards/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-notrussianbankcards/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента, номера которых начинаются на 51
+....
+Клиент получает список всех карт, выпущенных зарубежным банком  
+(number = 51*) 
+....
+===== Example request
+
+include::{generated}/cards-get-number51cards/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-number51cards/response.asciidoc[]
+
+
 ==== Получение списка карт в поле карты списания
 ....
 Дано:
@@ -180,10 +247,9 @@ include::{generated}/cards-get/response.asciidoc[]
 Когда:
   клиент кликает в поле ввода карты списания.
 Тогда:
-  выпадает список карт: карты Альфа-Банка клиента (alfabank = true) и 
-  те, с которых он ранее делал переводы (direction = sender).
+  выпадает список карт: карты Альфа-Банка клиента (active = true и alfabank = true) и 
+  те, с которых он ранее делал переводы (active = true и alfabank = false и direction = sender).
 ....
-
 ===== Example request
 
 include::{generated}/cards-get-sendercards/request.asciidoc[]
@@ -200,8 +266,8 @@ include::{generated}/cards-get-sendercards/response.asciidoc[]
 Когда:
   клиент кликает в поле ввода карты зачисления.
 Тогда:
-  выпадает список карт: карты Альфа-Банка клиента (alfabank = true) и 
-  те, на которые он ранее делал переводы (direction = recipient).
+  выпадает список карт: карты Альфа-Банка клиента (active = true и alfabank = true) и 
+  те, на которые он ранее делал переводы (active = true и alfabank = false и direction = recipient).
 ....
 ===== Example request
 
