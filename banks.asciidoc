@@ -35,9 +35,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/banks-json-scheme[JSON schema]
 | String
 | Код платежной системы (VISA, MASTERCARD, CUP, DINERSCLUB, AMEXPRESS)
 
-| $operations
-| List
-| Информация о возможных типах операций
+3+| List Operations (информация о возможных типах операций)
 
 | $$operation
 | String
@@ -47,9 +45,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/banks-json-scheme[JSON schema]
 | String
 | Комментарий для клиента
 
-| $$severity
-| Object
-| Важность комментария
+3+| Object Severity (важность комментария)
 
 | $$$level
 | String
@@ -97,14 +93,14 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/banks-json-scheme[JSON schema]
 | `GET /banks`
 | Получение списка всех банков с параметрами
 
-| `GET /banks/Sberbank`
-| Получение параметров банка Sberbank
+| `GET /banks/1`
+| Получение параметров банка 1
 
 | `POST /banks`
 | Сохранение нового банка
 
-| `PATCH /banks/Sberbank`
-| Редактирование параметров банка Sberbank
+| `PATCH /banks/1`
+| Редактирование параметров банка 1
 
 |===
 
@@ -122,7 +118,7 @@ include::{generated}/banks-get/request.asciidoc[]
 include::{generated}/banks-get/response.asciidoc[]
 
 
-==== Получение параметров банка Sberbank
+==== Получение параметров банка 1
 
 ===== Example request
 
