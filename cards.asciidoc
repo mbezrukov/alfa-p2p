@@ -123,7 +123,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
     "id": "12345679",
     "name": "Сбербанк",
     "latinName": "Sberbank",
-    "countryCode": "12",
+    "country": "12",
     "color": "#000008"
     }
 }
@@ -301,7 +301,7 @@ include::{generated}/cards-get-bybankid/response.asciidoc[]
 ==== Получение списка всех карт клиента, выпущенных зарубежным банком  
 ....
 Клиент получает список всех карт, выпущенных зарубежным банком  
-(bank/countryCode != 7) 
+(bank/country != 7) 
 ....
 ===== Example request
 
