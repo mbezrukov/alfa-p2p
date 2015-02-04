@@ -377,11 +377,11 @@ include::{generated}/cards-get-recipientcards/response.asciidoc[]
 ....
 ===== Example request
 
-include::{generated}/cards-get-currentcard/request.asciidoc[]
+include::{generated}/cards-get-byid/request.asciidoc[]
 
 ===== Example response
 
-include::{generated}/cards-get-currentcard/response.asciidoc[]
+include::{generated}/cards-get-byid/response.asciidoc[]
 
 
 [[resources-card-patch]]
