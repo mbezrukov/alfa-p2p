@@ -133,7 +133,7 @@ include::{generated}/banks-get-sberbank/request.asciidoc[]
 include::{generated}/banks-get-sberbank/response.asciidoc[]
 
 
-==== Получение спискав всех российских банков
+==== Получение списка всех российских банков
 
 ===== Example request
 
