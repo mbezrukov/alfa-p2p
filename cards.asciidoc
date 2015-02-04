@@ -27,10 +27,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | String
 | Карта списания или зачисления (sender - карты, с которых переводили, recipient - карты, на которые переводили)
 
-| color
-| String
-| Код цвета карты
-
 | name
 | String
 | Название карты
@@ -384,12 +380,12 @@ include::{generated}/cards-get-byid/response.asciidoc[]
 [[resources-card-patch]]
 === Метод PATCH
 
-==== Сохранение нового названия карты
+==== Редактирование названия карты
 ....
 Дано:
   клиент кликает на псевдоссылку с названием карты.
 Когда:
-  вводит новое название карты (name).
+  вводит новое название карты (name = Кредитка).
 Тогда:
   сохраняется новое название карты.
 ....
@@ -400,3 +396,16 @@ include::{generated}/cards-patch-name/request.asciidoc[]
 ===== Example response
 
 include::{generated}/cards-patch-name/response.asciidoc[]
+
+
+==== Смена статуса активности карты
+....
+Карта клиента меняет статус активности после неуспешной операции (active = false)
+....
+===== Example request
+
+include::{generated}/cards-patch-active/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-patch-active/response.asciidoc[]
