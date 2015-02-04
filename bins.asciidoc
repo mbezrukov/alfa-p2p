@@ -1,0 +1,176 @@
+= REST Banks
+
+:doctype: book
+:toc:
+:sectanchors:
+:sectlinks:
+:toclevels: 4
+:source-highlighter: highlightjs
+
+[[Overview]]
+== Описание
+Сервис предназначен для работы с объектом Banks.
+
+=== JSON schema
+
+[JSON schema] 
+
+=== Параметры объекта Banks
+|===
+| Параметр | Тип | Описание
+
+| $name
+| String
+| Название банка
+
+| $color
+| String
+| Код цвета банка
+
+| $country
+| String
+| Код страны банка
+
+| $paymentSystem
+| String
+| Код платежной системы (VISA, MASTERCARD, CUP, DINERSCLUB, AMEXPRESS)
+
+3+| ---
+
+| $operations
+| List
+| Информация о возможных типах операций
+
+| $$operation
+| String
+| Тип операции
+
+| $$comment
+| String
+| Комментарий для клиента
+
+3+| ---
+
+| $$severity
+| Object
+| Важность комментария
+
+| $$$level
+| String
+| Уровень важности комментария
+
+| $$$description
+| String
+| Описание уровня важности комментария
+|===
+
+=== Пример объекта
+----
+{
+  "name": "Sberbank",
+  "color": "#ff0000",
+  "country": "7",
+  "paymentSystem": "VISA",
+  "operations": [
+    {
+      "operation": "99",
+      "comment": "Комментарий клиента",
+      "severity": {
+        "level": "1",
+        "description": "Высокий"
+      }
+    },
+    {
+      "operation": "01",
+      "comment": "Комментарий клиента 2",
+      "severity": {
+        "level": "2",
+        "description": "Средний"
+      }
+    }
+  ]
+}
+----
+
+[[overview-http-verbs]]
+== Список методов
+
+|===
+| Метод | Описание
+
+| `GET /banks`
+| Получение списка всех банков с параметрами
+
+| `GET /banks/Sberbank`
+| Получение параметров банка Sberbank
+
+| `POST /banks`
+| Сохранение нового банка
+
+| `PATCH /banks/Sberbank`
+| Редактирование параметров банка Sberbank
+
+|===
+
+[[resources-banks-get]]
+=== Метод GET
+
+==== Получение списка всех банков с параметрами
+
+===== Example request
+
+include::{generated}/banks-get/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/banks-get/response.asciidoc[]
+
+
+==== Получение параметров банка Sberbank
+
+===== Example request
+
+include::{generated}/banks-get-sberbank/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/banks-get-sberbank/response.asciidoc[]
+
+
+==== Получение спискав всех российских банков
+
+===== Example request
+
+include::{generated}/banks-get-russianbanks/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/banks-get-russianbanks/response.asciidoc[]
+
+
+[[resources-banks-post]]
+=== Метод POST
+
+==== Сохранение нового банка
+
+===== Example request
+
+include::{generated}/banks-post/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/banks-post/response.asciidoc[]
+
+
+[[resources-banks-patch]]
+=== Метод PATCH
+
+==== Редактирование названия банка
+
+===== Example request
+
+include::{generated}/banks-patch-name/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/banks-patch-name/response.asciidoc[]
