@@ -146,7 +146,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 |===
 
-[[resources-card-get]]
+[[resources-cards-get]]
 === Метод GET
 
 
@@ -377,7 +377,7 @@ include::{generated}/cards-get-byid/request.asciidoc[]
 include::{generated}/cards-get-byid/response.asciidoc[]
 
 
-[[resources-card-patch]]
+[[resources-cards-patch]]
 === Метод PATCH
 
 ==== Редактирование названия карты
