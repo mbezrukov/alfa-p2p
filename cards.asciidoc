@@ -107,7 +107,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 ----
 {
   "id": "1",
-  "color": "#000002",
   "name": null,
   "direction": "sender",
   "active": true,
@@ -171,17 +170,30 @@ include::{generated}/cards-get/request.asciidoc[]
 include::{generated}/cards-get/response.asciidoc[]
 
 
+==== Получение списка всех карт клиента с названием "Кредитка"
+....
+Клиент получает список всех своих карт с названием "Кредитка"
+....
+===== Example request
+
+include::{generated}/cards-get-byname/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-byname/response.asciidoc[]
+
+
 ==== Получение списка всех активных карт клиента
 ....
 Клиент получает список всех своих активных (active = true) карт
 ....
 ===== Example request
 
-include::{generated}/cards-get-activecards/request.asciidoc[]
+include::{generated}/cards-get-active/request.asciidoc[]
 
 ===== Example response
 
-include::{generated}/cards-get-activecards/response.asciidoc[]
+include::{generated}/cards-get-active/response.asciidoc[]
 
 
 ==== Получение списка всех активных альфабанковских карт клиента 
@@ -191,39 +203,11 @@ include::{generated}/cards-get-activecards/response.asciidoc[]
 ....
 ===== Example request
 
-include::{generated}/cards-get-activealfacards/request.asciidoc[]
+include::{generated}/cards-get-activealfabank/request.asciidoc[]
 
 ===== Example response
 
-include::{generated}/cards-get-activealfacards/response.asciidoc[]
-
-
-==== Получение списка всех валютных карт клиента 
-....
-Клиент получает список всех своих валютных карт
-(currency/code != RUR) 
-....
-===== Example request
-
-include::{generated}/cards-get-notrurcards/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-get-notrurcards/response.asciidoc[]
-
-
-==== Получение списка всех карт клиента, выпущенных зарубежным банком  
-....
-Клиент получает список всех карт, выпущенных зарубежным банком  
-(bank/countryCode != 7) 
-....
-===== Example request
-
-include::{generated}/cards-get-notrussianbankcards/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-get-notrussianbankcards/response.asciidoc[]
+include::{generated}/cards-get-activealfabank/response.asciidoc[]
 
 
 ==== Получение списка всех карт клиента, номера которых начинаются на 51
@@ -233,11 +217,119 @@ include::{generated}/cards-get-notrussianbankcards/response.asciidoc[]
 ....
 ===== Example request
 
-include::{generated}/cards-get-number51cards/request.asciidoc[]
+include::{generated}/cards-get-bynumber/request.asciidoc[]
 
 ===== Example response
 
-include::{generated}/cards-get-number51cards/response.asciidoc[]
+include::{generated}/cards-get-bynumber/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента со сроком действия 07/15
+....
+Клиент получает список всех своих карт со сроком действия 07/15 (expirationYear = 15 и expirationMonth = 07)
+....
+===== Example request
+
+include::{generated}/cards-get-byexpirationdate/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-byexpirationdate/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента с последней операцией 31 января 2015 года
+....
+Клиент получает список всех своих карт с последней операцией 31 января 2015 года (lastTransaction =  2015-01-31)
+....
+===== Example request
+
+include::{generated}/cards-get-bylasttransaction/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-bylasttransaction/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента с платежной системой MasterCard
+....
+Клиент получает список всех своих карт с платежной системой MasterCard (paymentSystem =  MC)
+....
+===== Example request
+
+include::{generated}/cards-get-mastercard/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-mastercard/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента с нулевым балансом
+....
+Клиент получает список всех своих карт с нулевым балансом (account/balance = 0)
+....
+===== Example request
+
+include::{generated}/cards-get-withoutmoney/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-withoutmoney/response.asciidoc[]
+
+
+==== Получение списка всех валютных карт клиента 
+....
+Клиент получает список всех своих валютных карт
+(currency/code != RUR) 
+....
+===== Example request
+
+include::{generated}/cards-get-notrur/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-notrur/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента, выпущенных заданным банком  
+....
+Клиент получает список всех карт, выпущенных зарубежным банком  
+(bank/id = 00001) 
+....
+===== Example request
+
+include::{generated}/cards-get-bybankid/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-bybankid/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента, выпущенных зарубежным банком  
+....
+Клиент получает список всех карт, выпущенных зарубежным банком  
+(bank/countryCode != 7) 
+....
+===== Example request
+
+include::{generated}/cards-get-notrussianbank/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-notrussianbank/response.asciidoc[]
+
+
+==== Получение списка всех карт клиента с черным цветом банка  
+....
+Клиент получает список всех карт, выпущенных зарубежным банком  
+(bank/color = #000001) 
+....
+===== Example request
+
+include::{generated}/cards-get-blackbank/request.asciidoc[]
+
+===== Example response
+
+include::{generated}/cards-get-blackbank/response.asciidoc[]
 
 
 ==== Получение списка карт в поле карты списания
@@ -294,7 +386,7 @@ include::{generated}/cards-get-currentcard/response.asciidoc[]
 [[resources-card-patch]]
 === Метод PATCH
 
-==== Сохранение названия карты
+==== Сохранение нового названия карты
 ....
 Дано:
   клиент кликает на псевдоссылку с названием карты.
