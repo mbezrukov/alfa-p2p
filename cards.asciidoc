@@ -242,9 +242,9 @@ include::{generated}/cards-get-recipientcards/request.asciidoc[]
 include::{generated}/cards-get-recipientcards/response.asciidoc[]
 
 
-==== Получение параметров заданной карты (id = 1)
+==== Получение параметров заданной карты 
 ....
-Клиент получает все данные по своей карте.
+Клиент получает все данные по своей карте (id = 1).
 ....
 ===== Example request
 
