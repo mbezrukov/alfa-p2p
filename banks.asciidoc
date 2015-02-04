@@ -13,7 +13,7 @@
 
 === JSON schema
 
-[JSON schema] 
+https://github.com/mbezrukov/alfa-p2p/blob/master/banks-json-scheme[JSON schema] 
 
 === Параметры объекта Banks
 |===
