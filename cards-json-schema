@@ -9,7 +9,7 @@
     },
     "name": {
       "id": "name",
-      "type": "string"
+      "type": "null"
     },
     "direction": {
       "id": "direction",
@@ -85,8 +85,8 @@
           "id": "latinName",
           "type": "string"
         },
-        "countryCode": {
-          "id": "countryCode",
+        "country": {
+          "id": "country",
           "type": "string"
         },
         "color": {
