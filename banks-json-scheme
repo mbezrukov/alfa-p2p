@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "name": {
+      "id": "name",
+      "type": "string"
+    },
+    "color": {
+      "id": "color",
+      "type": "string"
+    },
+    "country": {
+      "id": "country",
+      "type": "string"
+    },
+    "paymentSystem": {
+      "id": "paymentSystem",
+      "type": "string"
+    },
+    "operations": {
+      "id": "operations",
+      "type": "array",
+      "items": [
+        {
+          "id": "0",
+          "type": "object",
+          "properties": {
+            "operation": {
+              "id": "operation",
+              "type": "string"
+            },
+            "comment": {
+              "id": "comment",
+              "type": "string"
+            },
+            "severity": {
+              "id": "severity",
+              "type": "object",
+              "properties": {
+                "level": {
+                  "id": "level",
+                  "type": "string"
+                },
+                "description": {
+                  "id": "description",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "id": "1",
+          "type": "object",
+          "properties": {
+            "operation": {
+              "id": "operation",
+              "type": "string"
+            },
+            "comment": {
+              "id": "comment",
+              "type": "string"
+            },
+            "severity": {
+              "id": "severity",
+              "type": "object",
+              "properties": {
+                "level": {
+                  "id": "level",
+                  "type": "string"
+                },
+                "description": {
+                  "id": "description",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "color",
+    "country",
+    "paymentSystem",
+    "operations"
+  ]
+}
