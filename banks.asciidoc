@@ -35,8 +35,6 @@
 | String
 | Код платежной системы (VISA, MASTERCARD, CUP, DINERSCLUB, AMEXPRESS)
 
-3+| ---
-
 | $operations
 | List
 | Информация о возможных типах операций
@@ -48,8 +46,6 @@
 | $$comment
 | String
 | Комментарий для клиента
-
-3+| ---
 
 | $$severity
 | Object
