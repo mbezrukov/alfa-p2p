@@ -175,6 +175,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 }
 ----
 
+'''
 [[overview-http-verbs]]
 == Список методов
 
@@ -192,6 +193,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 |===
 
+'''
 [[resources-cards-get]]
 === Метод GET /cards
 
@@ -430,7 +432,7 @@ include::{generated}/cards-get-byid/request.asciidoc[]
 
 include::{generated}/cards-get-byid/response.asciidoc[]
 
-
+'''
 [[resources-cards-patch]]
 === Метод PATCH /cards/{cardId}
 
