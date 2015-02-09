@@ -484,16 +484,3 @@ include::{generated}/cards-patch-name/request.asciidoc[]
 ===== Example response
 
 include::{generated}/cards-patch-name/response.asciidoc[]
-
-
-==== Смена статуса активности карты
-....
-Карта клиента меняет статус активности после неуспешной операции (active = false)
-....
-===== Example request
-
-include::{generated}/cards-patch-active/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-patch-active/response.asciidoc[]
