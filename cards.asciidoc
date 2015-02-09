@@ -185,7 +185,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | `GET /cards`
 | Получение списка карт пользователя
 
-| `GET /cards/{cardId}'
+| `GET /cards/{cardId}`
 | Получение информации о карте пользователя по ID
 
 | `PATCH /cards/{cardId}`
