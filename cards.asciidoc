@@ -141,7 +141,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 ----
 {
   "object": "list",
-  "count": "2"
+  "count": "2",
   "data": [
     {
       "id": "1",
