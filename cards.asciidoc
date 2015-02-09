@@ -17,83 +17,121 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 === Параметры объекта Cards
 |===
-| Параметр | Тип | Описание
+| Параметр | Длина | Тип | Описание
 
 | id
+| 16
 | String
 | ID карты
 
 | direction
+| 9
 | String
-| Карта списания или зачисления (sender - карты, с которых переводили, recipient - карты, на которые переводили)
+| Направление перевода (sender - карта списания, recipient - карта зачисления, both - оба варианта)
 
 | name
+| 70
 | String
-| Название карты
-
-| active
-| Boolean
-| Активная карта? (true/false)
+| Название
 
 | alfabank
+| 1
 | Boolean
-| Карта Альфа-Банка? (true/false)
+| Карта Альфа-Банка? (true/false/null - да/нет/нет)
 
 | number
+| 24
 | String
 | Номер карты
 
 | expirationYear
+| 2
 | Integer
-| Год окончания срока действия карты
+| Год окончания срока действия
 
 | expirationMonth
+| 2
 | Integer
-| Месяц окончания срока действия карты
+| Месяц окончания срока действия
 
 | lastTransaction
+| 8
 | Date
-| Дата последнего перевода
+| Дата последней транзакции (YYYYMMDD)
 
 | paymentSystem
+| 2
 | String
 | Платежная система
 
-3+| Объект Account
+4+| Account
+
+| account
+| ---
+| Object
+| Информация по основному счету
+
+| href
+| 300
+| String
+| Строка запроса метода GET /accounts
 
 | balance
+| 15
 | Integer
-| Текущий баланс
+| Остаток по основному счету
 
-3+| Объект Currency
+4+| Currency
+
+| currency
+| ---
+| Object
+| Информация по валюте основного счета
+
+| href
+| 300
+| String
+| Строка запроса метода GET /currencies
 
 | code
+| 3
 | String
-| Код валюты
+| Мнемоника валюты основного счета
 
 | description
+| 35
 | String
-| Название валюты
+| Название валюты основного счета
 
-3+| Объект Bank
+4+| Bank
 
-| id
+| bank
+| ---
+| Object
+| ИИнформация о банке, выпустившему карту
+
+| href
+| 300
 | String
-| ID банка
+| Строка запроса метода GET /banks/byCardId/{cardId}
 
 | name 
+| 105
 | String
 | Кириллическое название банка
 
 | latinName
+| 105
 | String
 | Латинское название банка
 
 | countryCode
+| 2
 | String
 | Код страны
 
 | color
+| 7
 | String
 | Цвет банка
 
@@ -102,30 +140,38 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 === Пример объекта
 ----
 {
-  "id": "1",
-  "name": null,
-  "direction": "sender",
-  "active": true,
-  "alfabank": false,
-  "number": "5154 **** 4025",
-  "expirationYear": "15",
-  "expirationMonth": "07",
-  "lastTransaction": "2015-12-15",
-  "paymentSystem": "MC",
-  "account": {
-    "balance": "15250.50",
-    "currency": {
-      "code": "USD",
-      "description": "Доллар США"
+  "object": "list",
+  "count": "2"
+  "data": [
+    {
+      "id": "1",
+      "direction": "sender",
+      "name": null,
+      "alfabank": false,
+      "number": "5154 **** 4025",
+      "expirationYear": "15",
+      "expirationMonth": "07",
+      "lastTransaction": "20151215",
+      "paymentSystem": "MC",
+        "account": {
+        "href": "http://.../accounts/...",
+        "balance": "15250.50",
+        "currency": {
+          "href": "http://.../currency/...",
+          "code": "USD",
+          "description": "Доллар США"
+        }
+      },
+      "bank": {
+        "href": "http://.../banks/...",
+        "name": "Сбербанк",
+        "latinName": "Sberbank",
+        "country": "12",
+        "color": "#000008"
       }
     },
-  "bank": {
-    "id": "12345679",
-    "name": "Сбербанк",
-    "latinName": "Sberbank",
-    "country": "12",
-    "color": "#000008"
-    }
+    {...}
+  ]
 }
 ----
 
@@ -136,23 +182,114 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | Метод | Описание
 
 | `GET /cards`
-| Получение списка карт клиента с параметрами
+| Получение списка карт пользователя
 
-| `GET /cards/123`
-| Получение параметров заданной карты
+| `GET /cards/{cardId}'
+| Получение информации о карте пользователя по ID
 
-| `PATCH /cards/123`
+| `PATCH /cards/{cardId}`
 | Редактирование параметров карты в системе
 
 |===
 
 [[resources-cards-get]]
-=== Метод GET
+=== Метод GET /cards
 
 
-==== Получение списка всех карт клиента
+===== Параметры заголовков запросов
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| customerId
+| 9
+| Mandatory
+| ---
+| Мнемоника пользователя и мнемоника местоположения
+| String
+
+| applicationId
+| 4
+| Mandatory
+| ---
+| ID приложения
+| String
+
+| mode
+| 1
+| Mandatory
+| ---
+| ID приложения
+| Режим работы (A - все, D - все различные карты, включая карты Альфа банка, C - карты клиента, P - карты партнера, O - карты партнера + карты Альфа Банка)
+
+|===
+
+
+===== Параметры строки запроса
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| verificationMethod
+| 10
+| Optional
+| S
+| Статус верификации карты (S - 3DS, H - hold, N - not verify)
+| String
+
+| deleted
+| 1
+| Optional
+| false
+| Возвращать карты, удаленные пользователем? (true/false/null - да/нет/да)
+| Boolean
+
+| blocked
+| 1
+| Optional
+| false
+| Возвращать заблокированные карты? (true/false/null - да/нет/да)
+| Boolean
+
+| active
+| 1
+| Optional
+| null
+| Возвращать активная или просроченные карты? (true - активные карты не просроченные, false – неактивные карты, null – активные карты просроченные и не просроченные)
+| Boolean
+
+|===
+
+===== Pagination
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| page
+| 2
+| Optional
+| 1
+| Номер страницы (null - все карты)
+| Integer
+
+| perPage
+| 3
+| Optional
+| 999
+| Количество карт на одной странице
+| Integer
+
+6+ | Параметры JSON-ответа
+
+| count
+| 3
+| ---
+| ---
+| Общее количество карт
+| Integer
+
+|===
+
+==== Получение списка всех карт пользователя
 ....
-Клиент получает список всех своих карт
+Пользователь получает список всех своих карт
 ....
 ===== Example request
 
@@ -241,6 +378,44 @@ include::{generated}/cards-get-recipientcards/request.asciidoc[]
 
 include::{generated}/cards-get-recipientcards/response.asciidoc[]
 
+[[resources-cards-byCardId]]
+=== Метод GET /cards/{cardId}
+
+
+===== Параметры заголовков запросов
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| customerId
+| 9
+| Mandatory
+| ---
+| Мнемоника пользователя и мнемоника местоположения
+| String
+
+| applicationId
+| 4
+| Mandatory
+| ---
+| ID приложения
+| String
+
+|===
+
+
+===== Параметры строки запроса
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| cardId
+| 16
+| Mandatory
+| ---
+| ID карты
+| String
+
+|===
+
 
 ==== Получение параметров заданной карты 
 ....
@@ -256,7 +431,42 @@ include::{generated}/cards-get-byid/response.asciidoc[]
 
 
 [[resources-cards-patch]]
-=== Метод PATCH
+=== Метод PATCH /cards/{cardId}
+
+===== Параметры заголовков запросов
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| customerId
+| 9
+| Mandatory
+| ---
+| Мнемоника пользователя и мнемоника местоположения
+| String
+
+| applicationId
+| 4
+| Mandatory
+| ---
+| ID приложения
+| String
+
+|===
+
+
+===== Параметры строки запроса
+|===
+| Параметр | Длина | Обязательность | Обязательность | Описание | Тип
+
+| cardId
+| 16
+| Mandatory
+| ---
+| ID карты
+| String
+
+|===
+
 
 ==== Редактирование названия карты
 ....
