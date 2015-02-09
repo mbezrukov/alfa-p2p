@@ -1,8 +1,5 @@
-:toc: left
-:toclevels: 3
 = REST Cards
-
-
+:toc: left
 :source-highlighter: highlightjs
 
 [[Overview]]
