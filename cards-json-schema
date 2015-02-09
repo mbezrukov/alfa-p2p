@@ -3,113 +3,128 @@
   "id": "/",
   "type": "object",
   "properties": {
-    "id": {
-      "id": "id",
+    "object": {
+      "id": "object",
       "type": "string"
     },
-    "name": {
-      "id": "name",
-      "type": "null"
-    },
-    "direction": {
-      "id": "direction",
+    "count": {
+      "id": "count",
       "type": "string"
     },
-    "active": {
-      "id": "active",
-      "type": "boolean"
-    },
-    "alfabank": {
-      "id": "alfabank",
-      "type": "boolean"
-    },
-    "number": {
-      "id": "number",
-      "type": "string"
-    },
-    "expirationYear": {
-      "id": "expirationYear",
-      "type": "string"
-    },
-    "expirationMonth": {
-      "id": "expirationMonth",
-      "type": "string"
-    },
-    "lastTransaction": {
-      "id": "lastTransaction",
-      "type": "string"
-    },
-    "paymentSystem": {
-      "id": "paymentSystem",
-      "type": "string"
-    },
-    "account": {
-      "id": "account",
-      "type": "object",
-      "properties": {
-        "balance": {
-          "id": "balance",
-          "type": "string"
-        },
-        "currency": {
-          "id": "currency",
-          "type": "object",
-          "properties": {
-            "code": {
-              "id": "code",
-              "type": "string"
-            },
-            "description": {
-              "id": "description",
-              "type": "string"
-            }
+    "data": {
+      "id": "data",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "id",
+            "type": "string"
           },
-          "additionalProperties": false
-        }
+          "direction": {
+            "id": "direction",
+            "type": "string"
+          },
+          "name": {
+            "id": "name",
+            "type": "null"
+          },
+          "alfabank": {
+            "id": "alfabank",
+            "type": "boolean"
+          },
+          "number": {
+            "id": "number",
+            "type": "string"
+          },
+          "expirationYear": {
+            "id": "expirationYear",
+            "type": "string"
+          },
+          "expirationMonth": {
+            "id": "expirationMonth",
+            "type": "string"
+          },
+          "lastTransaction": {
+            "id": "lastTransaction",
+            "type": "string"
+          },
+          "paymentSystem": {
+            "id": "paymentSystem",
+            "type": "string"
+          },
+          "account": {
+            "id": "account",
+            "type": "object",
+            "properties": {
+              "href": {
+                "id": "href",
+                "type": "string"
+              },
+              "balance": {
+                "id": "balance",
+                "type": "string"
+              },
+              "currency": {
+                "id": "currency",
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "id": "href",
+                    "type": "string"
+                  },
+                  "code": {
+                    "id": "code",
+                    "type": "string"
+                  },
+                  "description": {
+                    "id": "description",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "bank": {
+            "id": "bank",
+            "type": "object",
+            "properties": {
+              "href": {
+                "id": "href",
+                "type": "string"
+              },
+              "name": {
+                "id": "name",
+                "type": "string"
+              },
+              "latinName": {
+                "id": "latinName",
+                "type": "string"
+              },
+              "country": {
+                "id": "country",
+                "type": "string"
+              },
+              "color": {
+                "id": "color",
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
       },
-      "additionalProperties": false
-    },
-    "bank": {
-      "id": "bank",
-      "type": "object",
-      "properties": {
-        "id": {
-          "id": "id",
-          "type": "string"
-        },
-        "name": {
-          "id": "name",
-          "type": "string"
-        },
-        "latinName": {
-          "id": "latinName",
-          "type": "string"
-        },
-        "country": {
-          "id": "country",
-          "type": "string"
-        },
-        "color": {
-          "id": "color",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
+      "additionalItems": false
     }
   },
   "additionalProperties": false,
   "required": [
-    "id",
-    "name",
-    "direction",
-    "active",
-    "alfabank",
-    "number",
-    "expirationYear",
-    "expirationMonth",
-    "lastTransaction",
-    "paymentSystem",
-    "account",
-    "bank"
+    "object",
+    "count",
+    "data"
   ]
 }
