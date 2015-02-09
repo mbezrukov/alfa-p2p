@@ -378,6 +378,7 @@ include::{generated}/cards-get-recipientcards/request.asciidoc[]
 
 include::{generated}/cards-get-recipientcards/response.asciidoc[]
 
+'''
 [[resources-cards-byCardId]]
 === Метод GET /cards/{cardId}
 
