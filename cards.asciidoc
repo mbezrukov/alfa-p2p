@@ -220,8 +220,8 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | 1
 | Mandatory
 | ---
-| ID приложения
 | Режим работы (A - все, D - все различные карты, включая карты Альфа банка, C - карты клиента, P - карты партнера, O - карты партнера + карты Альфа Банка)
+| String
 
 |===
 
