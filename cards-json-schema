@@ -46,8 +46,8 @@
             "id": "expirationMonth",
             "type": "string"
           },
-          "lastTransaction": {
-            "id": "lastTransaction",
+          "lastTransactionDate": {
+            "id": "lastTransactionDate",
             "type": "string"
           },
           "paymentSystem": {
@@ -96,16 +96,16 @@
                 "id": "href",
                 "type": "string"
               },
+              "code": {
+                "id": "code",
+                "type": "string"
+              },
               "name": {
                 "id": "name",
                 "type": "string"
               },
-              "latinName": {
-                "id": "latinName",
-                "type": "string"
-              },
-              "country": {
-                "id": "country",
+              "countryCode": {
+                "id": "countryCode",
                 "type": "string"
               },
               "color": {
