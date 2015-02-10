@@ -110,7 +110,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 ----
 {
   "object": "list",
-  "count": "2",
   "data": [
     {
       "id": "1",
@@ -233,12 +232,44 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 ....
 ===== Example request
 
-include::{generated}/cards-get-sendercards/request.asciidoc[]
+GET `http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender`
 
 ===== Example response
-
-include::{generated}/cards-get-sendercards/response.asciidoc[]
-
+----
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "1",
+      "direction": "sender",
+      "name": null,
+      "alfabank": false,
+      "number": "5154 **** 4025",
+      "expirationYear": "15",
+      "expirationMonth": "07",
+      "lastTransactionDate": "2015-12-15",
+      "paymentSystem": "MC",
+        "account": {
+        "href": "http://.../accounts/...",
+        "balance": "15250.50",
+        "currency": {
+          "href": "http://.../currency/...",
+          "code": "USD",
+          "description": "Доллар США"
+        }
+      },
+      "bank": {
+        "href": "http://.../banks/...",
+        "code": "0000001",
+        "name": "Сбербанк",
+        "countryCode": "12",
+        "color": "#000008"
+      }
+    },
+    {...}
+  ]
+}
+----
 
 ==== Получение списка карт в поле карты зачисления
 ....
@@ -252,7 +283,7 @@ include::{generated}/cards-get-sendercards/response.asciidoc[]
 ....
 ===== Example request
 
-include::{generated}/cards-get-recipientcards/request.asciidoc[]
+GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=recipient
 
 ===== Example response
 
