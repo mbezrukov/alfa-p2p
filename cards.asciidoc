@@ -112,7 +112,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
   "object": "list",
   "data": [
     {
-      "id": "1",
+      "id": "0000000000000001",
       "direction": "sender",
       "name": null,
       "alfabank": false,
@@ -231,8 +231,9 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
   те, с которых он ранее делал переводы (active = true и alfabank = false и direction = sender).
 ....
 ===== Example request
-
-GET `http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender`
+----
+GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender
+----
 
 ===== Example response
 ----
@@ -240,33 +241,59 @@ GET `http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&ac
   "object": "list",
   "data": [
     {
-      "id": "1",
+      "id": "0000000000000001",
       "direction": "sender",
       "name": null,
-      "alfabank": false,
+      "alfabank": true,
       "number": "5154 **** 4025",
       "expirationYear": "15",
       "expirationMonth": "07",
-      "lastTransactionDate": "2015-12-15",
+      "lastTransactionDate": "2015-01-15",
       "paymentSystem": "MC",
         "account": {
         "href": "http://.../accounts/...",
         "balance": "15250.50",
         "currency": {
           "href": "http://.../currency/...",
-          "code": "USD",
-          "description": "Доллар США"
+          "code": "RUR",
+          "description": Рубль"
         }
       },
       "bank": {
         "href": "http://.../banks/...",
         "code": "0000001",
+        "name": "Альфа-Банк",
+        "countryCode": "12",
+        "color": "#000007"
+      }
+    },
+    {
+      "id": "0000000000000002",
+      "direction": "sender",
+      "name": null,
+      "alfabank": false,
+      "number": "5154 **** 4040",
+      "expirationYear": "15",
+      "expirationMonth": "07",
+      "lastTransactionDate": "2015-01-15",
+      "paymentSystem": "MC",
+        "account": {
+        "href": "http://.../accounts/...",
+        "balance": "250.00",
+        "currency": {
+          "href": "http://.../currency/...",
+          "code": "RUR",
+          "description": Рубль"
+        }
+      },
+      "bank": {
+        "href": "http://.../banks/...",
+        "code": "0000002",
         "name": "Сбербанк",
         "countryCode": "12",
         "color": "#000008"
       }
-    },
-    {...}
+    }
   ]
 }
 ----
@@ -282,13 +309,71 @@ GET `http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&ac
   те, на которые он ранее делал переводы (active = true и alfabank = false и direction = recipient).
 ....
 ===== Example request
-
+----
 GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=recipient
-
+----
 ===== Example response
-
-include::{generated}/cards-get-recipientcards/response.asciidoc[]
-
+----
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "0000000000000003",
+      "direction": "recipient",
+      "name": null,
+      "alfabank": true,
+      "number": "5154 **** 4052",
+      "expirationYear": "15",
+      "expirationMonth": "07",
+      "lastTransactionDate": "2015-01-15",
+      "paymentSystem": "MC",
+        "account": {
+        "href": "http://.../accounts/...",
+        "balance": "1000.50",
+        "currency": {
+          "href": "http://.../currency/...",
+          "code": "RUR",
+          "description": Рубль"
+        }
+      },
+      "bank": {
+        "href": "http://.../banks/...",
+        "code": "0000001",
+        "name": "Альфа-Банк",
+        "countryCode": "12",
+        "color": "#000007"
+      }
+    },
+    {
+      "id": "0000000000000004",
+      "direction": "recipient",
+      "name": null,
+      "alfabank": false,
+      "number": "5154 **** 4070",
+      "expirationYear": "15",
+      "expirationMonth": "07",
+      "lastTransactionDate": "2015-01-15",
+      "paymentSystem": "MC",
+        "account": {
+        "href": "http://.../accounts/...",
+        "balance": "50000.50",
+        "currency": {
+          "href": "http://.../currency/...",
+          "code": "RUR",
+          "description": Рубль"
+        }
+      },
+      "bank": {
+        "href": "http://.../banks/...",
+        "code": "0000002",
+        "name": "Сбербанк",
+        "countryCode": "12",
+        "color": "#000008"
+      }
+    }
+  ]
+}
+----
 
 [[resources-cards-byCardId]]
 === Метод GET /cards/{cardId}
@@ -331,12 +416,39 @@ include::{generated}/cards-get-recipientcards/response.asciidoc[]
 Клиент получает все данные по своей карте (id = ...)
 ....
 ===== Example request
-
-include::{generated}/cards-get-byid/request.asciidoc[]
-
+----
+GET http://.../cards/0000000000000001
+----
 ===== Example response
-
-include::{generated}/cards-get-byid/response.asciidoc[]
+----
+{
+  "id": "0000000000000003",
+  "direction": "recipient",
+  "name": null,
+  "alfabank": true,
+  "number": "5154 **** 4052",
+  "expirationYear": "15",
+  "expirationMonth": "07",
+  "lastTransactionDate": "2015-01-15",
+  "paymentSystem": "MC",
+    "account": {
+    "href": "http://.../accounts/...",
+    "balance": "1000.50",
+    "currency": {
+      "href": "http://.../currency/...",
+      "code": "RUR",
+      "description": Рубль"
+    }
+  },
+  "bank": {
+    "href": "http://.../banks/...",
+    "code": "0000001",
+    "name": "Альфа-Банк",
+    "countryCode": "12",
+    "color": "#000007"
+  }
+}
+----
 
 
 [[resources-cards-patch]]
@@ -384,9 +496,10 @@ include::{generated}/cards-get-byid/response.asciidoc[]
   сохраняется новое название карты.
 ....
 ===== Example request
-
-include::{generated}/cards-patch-name/request.asciidoc[]
-
+----
+PATCH http://.../cards/0000000000000001
+----
 ===== Example response
-
-include::{generated}/cards-patch-name/response.asciidoc[]
+----
+HTTP/1.1 200 OK
+----
