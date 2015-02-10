@@ -12,116 +12,95 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 === Параметры объекта Cards
 |===
-| Параметр | Длина | Тип | Описание
+| Параметр | Тип | Описание
 
 | id
-| 16
 | String
 | ID карты
 
 | direction
-| 9
 | String
 | Направление перевода (sender - карта списания, recipient - карта зачисления, both - оба варианта)
 
 | name
-| 70
 | String
 | Название
 
 | alfabank
-| 1
 | Boolean
 | Карта Альфа-Банка? (true/false/null - да/нет/нет)
 
 | number
-| 24
 | String
 | Номер карты
 
 | expirationYear
-| 2
 | Integer
 | Год окончания срока действия
 
 | expirationMonth
-| 2
 | Integer
 | Месяц окончания срока действия
 
-| lastTransaction
-| 8
+| lastTransactionDate
 | Date
-| Дата последней транзакции (YYYYMMDD)
+| Дата последней транзакции (YYYY-MM-DD)
 
 | paymentSystem
-| 2
 | String
 | Платежная система
 
-4+| Account
+3+| Account
 
 | account
-| ---
 | Object
 | Информация по основному счету
 
 | href
-| 300
 | String
 | Строка запроса метода GET /accounts
 
 | balance
-| 15
 | Integer
 | Остаток по основному счету
 
-4+| Currency
+3+| Currency
 
 | currency
-| ---
 | Object
 | Информация по валюте основного счета
 
 | href
-| 300
 | String
 | Строка запроса метода GET /currencies
 
 | code
-| 3
 | String
 | Мнемоника валюты основного счета
 
 | description
-| 35
 | String
 | Название валюты основного счета
 
-4+| Bank
+3+| Bank
 
 | bank
-| ---
 | Object
 | ИИнформация о банке, выпустившему карту
 
 | href
-| 300
 | String
 | Строка запроса метода GET /banks/byCardId/{cardId}
 
 | name 
-| 105
 | String
 | Название банка
 
 | countryCode
-| 2
 | String
 | Код страны
 
 | color
-| 7
 | String
 | Цвет банка
 
@@ -164,7 +143,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
   ]
 }
 ----
-
 
 [[overview-http-verbs]]
 == Список методов
@@ -243,61 +221,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 |===
 
-
-==== Получение списка всех карт пользователя
-....
-Пользователь получает список всех своих карт
-....
-===== Example request
-
-include::{generated}/cards-get/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-get/response.asciidoc[]
-
-
-==== Получение списка всех активных карт клиента
-....
-Клиент получает список всех своих активных (active = true) карт
-....
-===== Example request
-
-include::{generated}/cards-get-active/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-get-active/response.asciidoc[]
-
-
-==== Получение списка всех активных альфабанковских карт клиента 
-....
-Клиент получает список всех своих активных карт Альфа-Банка
-(active = true и alfabank = true) 
-....
-===== Example request
-
-include::{generated}/cards-get-activealfabank/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-get-activealfabank/response.asciidoc[]
-
-
-==== Получение списка всех активных неальфабанковских карт клиента 
-....
-Клиент получает список всех своих активных карт Альфа-Банка
-(active = true и alfabank = false) 
-....
-===== Example request
-
-include::{generated}/cards-get-activenotalfabank/request.asciidoc[]
-
-===== Example response
-
-include::{generated}/cards-get-activenotalfabank/response.asciidoc[]
-
-
 ==== Получение списка карт в поле карты списания
 ....
 Дано:
@@ -363,7 +286,7 @@ include::{generated}/cards-get-recipientcards/response.asciidoc[]
 |===
 | Параметр | Обязательность | По умолчанию | Описание | Тип
 
-| cardId
+| Id
 | Mandatory
 | ---
 | ID карты
@@ -411,7 +334,7 @@ include::{generated}/cards-get-byid/response.asciidoc[]
 |===
 | Параметр | Обязательность | По умолчанию | Описание | Тип
 
-| cardId
+| Id
 | Mandatory
 | ---
 | ID карты
