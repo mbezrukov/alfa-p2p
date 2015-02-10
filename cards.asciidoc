@@ -4,7 +4,7 @@
 
 [[Overview]]
 == Описание
-Сервис предназначен для работы с объектом Cards.
+Сервис предназначен для работы с объектом Card.
 
 === JSON schema
 
@@ -113,12 +113,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | name 
 | 105
 | String
-| Кириллическое название банка
-
-| latinName
-| 105
-| String
-| Латинское название банка
+| Название банка
 
 | countryCode
 | 2
@@ -146,7 +141,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
       "number": "5154 **** 4025",
       "expirationYear": "15",
       "expirationMonth": "07",
-      "lastTransaction": "20151215",
+      "lastTransactionDate": "2015-12-15",
       "paymentSystem": "MC",
         "account": {
         "href": "http://.../accounts/...",
@@ -159,9 +154,9 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
       },
       "bank": {
         "href": "http://.../banks/...",
+        "code": "0000001",
         "name": "Сбербанк",
-        "latinName": "Sberbank",
-        "country": "12",
+        "countryCode": "12",
         "color": "#000008"
       }
     },
