@@ -224,7 +224,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | 10
 | Optional
 | S
-| Статус верификации карты (S - 3DS, H - hold, N - not verify)
+| Статус верификации карты ("3DSecure", "hold", "notverify")
 | String
 
 | deleted
