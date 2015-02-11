@@ -1,39 +1,12 @@
 = REST Cards
 :toc: left
-:source-highlighter: highlightjs
 
-[source, json]
+
+[source]
 ----
-[
-  {
-    "id": "0000000000000001",
-    "direction": "sender",
-    "name": null,
-    "alfabank": false,
-    "number": "5154 **** 4025",
-    "expirationYear": "15",
-    "expirationMonth": "07",
-    "lastTransactionDate": "2015-12-15",
-    "paymentSystem": "MC",
-    "account": {
-      "href": "http://.../accounts/...",
-      "balance": "1525050",
-      "currency": {
-        "href": "http://.../currency/...",
-        "code": "USD",
-        "description": "Доллар США"
-      }
-    },
-    "bank": {
-      "href": "http://.../banks/...",
-      "code": "0000001",
-      "name": "Сбербанк",
-      "color": "#000008"
-    }
-  },
-  {...}
-]
+HTTP/1.1 200 OK
 ----
+
 
 
 [[Overview]]
@@ -165,8 +138,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
       "name": "Сбербанк",
       "color": "#000008"
     }
-  },
-  {...}
+  }
 ]
 ----
 
@@ -261,6 +233,7 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 ----
 
 ===== Example response
+[source, json]
 ----
 [
   {
@@ -333,6 +306,7 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=recipient
 ----
 ===== Example response
+[source, json]
 ----
 [
   {
@@ -435,6 +409,7 @@ ID карты
 GET http://.../cards/0000000000000003
 ----
 ===== Example response
+[source, json]
 ----
 {
   "id": "0000000000000003",
