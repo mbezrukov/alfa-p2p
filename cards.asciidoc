@@ -528,7 +528,9 @@ Content-Length:
 customerId: AHQFFT
 applicationId: ac-p2p
 
-name=card1
+{
+  "name": "card1"
+}
 ----
 ===== Example response
 ----
