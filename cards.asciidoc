@@ -145,10 +145,10 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-get-cards[GET /cards]
 | Получение списка карт пользователя
 
-| [GET /cards/{cardId}]
+| https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-get-cardscardid[GET /cards/{cardId}]
 | Получение информации о карте пользователя по ID
 
-| [PATCH /cards/{cardId}]
+| https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-patch-cardscardid[PATCH /cards/{cardId}]
 | Редактирование параметров карты в системе
 
 |===
