@@ -119,7 +119,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
       "paymentSystem": "MC",
         "account": {
         "href": "http://.../accounts/...",
-        "balance": "15250.50",
+        "balance": "1525050",
         "currency": {
           "href": "http://.../currency/...",
           "code": "USD",
