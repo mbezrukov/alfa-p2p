@@ -91,11 +91,15 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 | bank
 | Object
-| ИИнформация о банке, выпустившему карту
+| Информация о банке, выпустившему карту
 
 | href
 | String
 | Строка запроса метода GET /banks/byCardId/{cardId}
+
+| id
+| String
+| ID банка
 
 | name 
 | String
@@ -133,7 +137,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
     },
     "bank": {
       "href": "http://.../banks/...",
-      "code": "0000001",
+      "id": "0000002",
       "name": "Сбербанк",
       "color": "#000008"
     }
