@@ -2,6 +2,39 @@
 :toc: left
 :source-highlighter: highlightjs
 
+[source, json]
+----
+[
+  {
+    "id": "0000000000000001",
+    "direction": "sender",
+    "name": null,
+    "alfabank": false,
+    "number": "5154 **** 4025",
+    "expirationYear": "15",
+    "expirationMonth": "07",
+    "lastTransactionDate": "2015-12-15",
+    "paymentSystem": "MC",
+    "account": {
+      "href": "http://.../accounts/...",
+      "balance": "1525050",
+      "currency": {
+        "href": "http://.../currency/...",
+        "code": "USD",
+        "description": "Доллар США"
+      }
+    },
+    "bank": {
+      "href": "http://.../banks/...",
+      "code": "0000001",
+      "name": "Сбербанк",
+      "color": "#000008"
+    }
+  },
+  {...}
+]
+----
+
 
 [[Overview]]
 == Описание
@@ -104,6 +137,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 |===
 
 === Пример объекта
+[source, json]
 ----
 [
   {
