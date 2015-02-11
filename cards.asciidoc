@@ -2,10 +2,11 @@
 :toc: left
 :source-highlighter: highlightjs
 
+<<resources-cards-get, GET /cards>>
+
 [[Overview]]
 == Описание
 Сервис предназначен для работы с объектом Card.
-
 
 === JSON schema
 
@@ -142,7 +143,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 |===
 | Метод | Описание
 
-| https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-get-cards[GET /cards]
+| <<resources-cards-get, GET /cards>>
 | Получение списка карт пользователя
 
 | https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-get-cardscardid[GET /cards/{cardId}]
