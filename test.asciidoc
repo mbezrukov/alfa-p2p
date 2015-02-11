@@ -1,26 +1,24 @@
-= AsciiDoc Writer's Guide
-Doc Writer <doc.writer@asciidoctor.org>
-v1.0, 2013-08-01
+= 22
 :toc:
 
-== Параметры заголовков запросов
+[width="100"]
 |===
 | Параметр | Тип | Описание 
 
 | customerId
 | String
-| 
-Mandatory
+| Mandatory +
 Мнемоника пользователя и мнемоника местоположения
 
-| applicationId
-| String
-| Mandatory + 
-ID приложения
+|===
 
-| mode
+[width="50"]
+|===
+| Параметр | Тип | Описание 
+
+| customerId
 | String
 | Mandatory +
-Режим работы ("all" - карты приложения + карты Альфа-Банка)
+Мнемоника пользователя и мнемоника местоположения
 
 |===
