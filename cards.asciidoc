@@ -104,35 +104,35 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 === Пример объекта
 ----
-[  
-    {
-      "id": "0000000000000001",
-      "direction": "sender",
-      "name": null,
-      "alfabank": false,
-      "number": "5154 **** 4025",
-      "expirationYear": "15",
-      "expirationMonth": "07",
-      "lastTransactionDate": "2015-12-15",
-      "paymentSystem": "MC",
-      "account": {
-        "href": "http://.../accounts/...",
-        "balance": "1525050",
-        "currency": {
-          "href": "http://.../currency/...",
-          "code": "USD",
-          "description": "Доллар США"
-        }
-      },
-      "bank": {
-        "href": "http://.../banks/...",
-        "code": "0000001",
-        "name": "Сбербанк",
-        "color": "#000008"
+[
+  {
+    "id": "0000000000000001",
+    "direction": "sender",
+    "name": null,
+    "alfabank": false,
+    "number": "5154 **** 4025",
+    "expirationYear": "15",
+    "expirationMonth": "07",
+    "lastTransactionDate": "2015-12-15",
+    "paymentSystem": "MC",
+    "account": {
+      "href": "http://.../accounts/...",
+      "balance": "1525050",
+      "currency": {
+        "href": "http://.../currency/...",
+        "code": "USD",
+        "description": "Доллар США"
       }
     },
-    {...}
-  ]
+    "bank": {
+      "href": "http://.../banks/...",
+      "code": "0000001",
+      "name": "Сбербанк",
+      "color": "#000008"
+    }
+  },
+  {...}
+]
 ----
 
 [[overview-http-verbs]]
@@ -224,79 +224,67 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 ....
 ===== Example request
 
-----
-{
-  "customerId": "AHQFFT",
-  "applicationId": "p2p",
-  "mode": "all"
-}
-----
-
+*header*
 ----
 GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender
 ----
 
 ===== Example response
 ----
-{
-  "object": "list",
-  "data": [
-    {
-      "id": "0000000000000001",
-      "direction": "sender",
-      "name": null,
-      "alfabank": true,
-      "number": "5154 **** 4025",
-      "expirationYear": "15",
-      "expirationMonth": "07",
-      "lastTransactionDate": "2015-01-15",
-      "paymentSystem": "MC",
-        "account": {
-        "href": "http://.../accounts/...",
-        "balance": "15250.50",
-        "currency": {
-          "href": "http://.../currency/...",
-          "code": "RUR",
-          "description": Рубль"
-        }
-      },
-      "bank": {
-        "href": "http://.../banks/...",
-        "code": "0000001",
-        "name": "Альфа-Банк",
-        "countryCode": "12",
-        "color": "#000007"
+[
+  {
+    "id": "0000000000000001",
+    "direction": "sender",
+    "name": null,
+    "alfabank": true,
+    "number": "5154 **** 4025",
+    "expirationYear": "15",
+    "expirationMonth": "07",
+    "lastTransactionDate": "2015-01-15",
+    "paymentSystem": "MC",
+    "account": {
+      "href": "http://.../accounts/...",
+      "balance": "1525050",
+      "currency": {
+        "href": "http://.../currency/...",
+        "code": "RUR",
+        "description": "Рубль"
       }
     },
-    {
-      "id": "0000000000000002",
-      "direction": "sender",
-      "name": null,
-      "alfabank": false,
-      "number": "5154 **** 4040",
-      "expirationYear": "15",
-      "expirationMonth": "07",
-      "lastTransactionDate": "2015-01-15",
-      "paymentSystem": "MC",
-        "account": {
-        "href": "http://.../accounts/...",
-        "balance": "250.00",
-        "currency": {
-          "href": "http://.../currency/...",
-          "code": "RUR",
-          "description": Рубль"
-        }
-      },
-      "bank": {
-        "href": "http://.../banks/...",
-        "code": "0000002",
-        "name": "Сбербанк",
-        "countryCode": "12",
-        "color": "#000008"
-      }
+    "bank": {
+      "href": "http://.../banks/...",
+      "code": "0000001",
+      "name": "Альфа-Банк",
+      "color": "#000007"
     }
-  ]
-}
+  },
+  {
+    "id": "0000000000000002",
+    "direction": "sender",
+    "name": null,
+    "alfabank": false,
+    "number": "5154 **** 4040",
+    "expirationYear": "15",
+    "expirationMonth": "07",
+    "lastTransactionDate": "2015-01-15",
+    "paymentSystem": "MC",
+    "account": {
+      "href": "http://.../accounts/...",
+      "balance": "25000",
+      "currency": {
+        "href": "http://.../currency/...",
+        "code": "RUR",
+        "description": "Рубль"
+      }
+    },
+    "bank": {
+      "href": "http://.../banks/...",
+      "code": "0000002",
+      "name": "Сбербанк",
+      "color": "#000008"
+    }
+  }
+]
 ----
 
 ==== Получение списка карт в поле карты зачисления
@@ -315,65 +303,60 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 ----
 ===== Example response
 ----
-{
-  "object": "list",
-  "data": [
-    {
-      "id": "0000000000000003",
-      "direction": "recipient",
-      "name": null,
-      "alfabank": true,
-      "number": "5154 **** 4052",
-      "expirationYear": "15",
-      "expirationMonth": "07",
-      "lastTransactionDate": "2015-01-15",
-      "paymentSystem": "MC",
-        "account": {
-        "href": "http://.../accounts/...",
-        "balance": "1000.50",
-        "currency": {
-          "href": "http://.../currency/...",
-          "code": "RUR",
-          "description": Рубль"
-        }
-      },
-      "bank": {
-        "href": "http://.../banks/...",
-        "code": "0000001",
-        "name": "Альфа-Банк",
-        "countryCode": "12",
-        "color": "#000007"
+[
+  {
+    "id": "0000000000000003",
+    "direction": "recipient",
+    "name": null,
+    "alfabank": true,
+    "number": "5154 **** 4052",
+    "expirationYear": "15",
+    "expirationMonth": "07",
+    "lastTransactionDate": "2015-01-15",
+    "paymentSystem": "MC",
+    "account": {
+      "href": "http://.../accounts/...",
+      "balance": "100050",
+      "currency": {
+        "href": "http://.../currency/...",
+        "code": "RUR",
+        "description": "Рубль"
       }
     },
-    {
-      "id": "0000000000000004",
-      "direction": "recipient",
-      "name": null,
-      "alfabank": false,
-      "number": "5154 **** 4070",
-      "expirationYear": "15",
-      "expirationMonth": "07",
-      "lastTransactionDate": "2015-01-15",
-      "paymentSystem": "MC",
-        "account": {
-        "href": "http://.../accounts/...",
-        "balance": "50000.50",
-        "currency": {
-          "href": "http://.../currency/...",
-          "code": "RUR",
-          "description": Рубль"
-        }
-      },
-      "bank": {
-        "href": "http://.../banks/...",
-        "code": "0000002",
-        "name": "Сбербанк",
-        "countryCode": "12",
-        "color": "#000008"
-      }
+    "bank": {
+      "href": "http://.../banks/...",
+      "code": "0000001",
+      "name": "Альфа-Банк",
+      "color": "#000007"
     }
-  ]
-}
+  },
+  {
+    "id": "0000000000000004",
+    "direction": "recipient",
+    "name": null,
+    "alfabank": false,
+    "number": "5154 **** 4070",
+    "expirationYear": "15",
+    "expirationMonth": "07",
+    "lastTransactionDate": "2015-01-15",
+    "paymentSystem": "MC",
+    "account": {
+      "href": "http://.../accounts/...",
+      "balance": "5000050",
+      "currency": {
+        "href": "http://.../currency/...",
+        "code": "USD",
+        "description": "Доллар США"
+      }
+    },
+    "bank": {
+      "href": "http://.../banks/...",
+      "code": "0000002",
+      "name": "Сбербанк",
+      "color": "#000008"
+    }
+  }
+]
 ----
 
 [[resources-cards-byCardId]]
@@ -414,11 +397,11 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 
 ==== Получение параметров заданной карты 
 ....
-Клиент получает все данные по своей карте (id = ...)
+Клиент получает все данные по своей карте (id = 0000000000000003)
 ....
 ===== Example request
 ----
-GET http://.../cards/0000000000000001
+GET http://.../cards/0000000000000003
 ----
 ===== Example response
 ----
@@ -432,9 +415,9 @@ GET http://.../cards/0000000000000001
   "expirationMonth": "07",
   "lastTransactionDate": "2015-01-15",
   "paymentSystem": "MC",
-    "account": {
+  "account": {
     "href": "http://.../accounts/...",
-    "balance": "1000.50",
+    "balance": "100050",
     "currency": {
       "href": "http://.../currency/...",
       "code": "RUR",
@@ -445,7 +428,6 @@ GET http://.../cards/0000000000000001
     "href": "http://.../banks/...",
     "code": "0000001",
     "name": "Альфа-Банк",
-    "countryCode": "12",
     "color": "#000007"
   }
 }
@@ -492,7 +474,7 @@ GET http://.../cards/0000000000000001
 Дано:
   клиент кликает на псевдоссылку с названием карты.
 Когда:
-  вводит новое название карты (name = ...)
+  вводит новое название карты (name = 0000000000000001)
 Тогда:
   сохраняется новое название карты.
 ....
