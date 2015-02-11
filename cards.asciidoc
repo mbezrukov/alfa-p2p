@@ -2,7 +2,6 @@
 :toc: left
 :source-highlighter: highlightjs
 
-<<resources-cards-get, GET /cards>>
 
 [[Overview]]
 == Описание
@@ -146,10 +145,10 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | <<resources-cards-get, GET /cards>>
 | Получение списка карт пользователя
 
-| https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-get-cardscardid[GET /cards/{cardId}]
+| <<resources-cards-byCardId, GET /cards/{cardId}>>
 | Получение информации о карте пользователя по ID
 
-| https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-patch-cardscardid[PATCH /cards/{cardId}]
+| <<resources-cards-patsh, PATCH /cards/{cardId}>>
 | Редактирование параметров карты в системе
 
 |===
