@@ -538,7 +538,7 @@ applicationId: ac-p2p
 }
 ----
 ===== Example response
-[source, java]
+[source, json]
 ----
 HTTP/1.1 200 OK
 ----
