@@ -228,12 +228,20 @@ ID приложения
 ===== Example request
 
 ----
-GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender
+GET /cards/verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender HTTP/1.1
+Host: money.alfabank.ru 
+Authorization:
+Content-Type: 
+Content-Length: 
+customerId: AHQFFT
+applicationId: ac-p2p
+mode: all
 ----
 
 ===== Example response
 [source, json]
 ----
+HTTP/1.1 200 OK
 [
   {
     "id": "0000000000000001",
@@ -304,11 +312,19 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 ....
 ===== Example request
 ----
-GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=recipient
+GET /cards/allverificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=recipient HTTP/1.1
+Host: money.alfabank.ru 
+Authorization:
+Content-Type: 
+Content-Length: 
+customerId: AHQFFT
+applicationId: ac-p2p
+mode: all
 ----
 ===== Example response
 [source, json]
 ----
+HTTP/1.1 200 OK
 [
   {
     "id": "0000000000000003",
@@ -386,7 +402,6 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 | Mandatory +
 ID приложения
 
-
 |===
 
 
@@ -409,11 +424,18 @@ ID карты
 ....
 ===== Example request
 ----
-GET http://.../cards/0000000000000003
+GET /cards/0000000000000003 HTTP/1.1
+Host: money.alfabank.ru 
+Authorization:
+Content-Type: 
+Content-Length: 
+customerId: AHQFFT
+applicationId: ac-p2p
 ----
 ===== Example response
 [source, json]
 ----
+HTTP/1.1 200 OK
 {
   "id": "0000000000000003",
   "direction": "recipient",
@@ -462,7 +484,6 @@ GET http://.../cards/0000000000000003
 | Mandatory +
 ID приложения
 
-
 |===
 
 
@@ -474,7 +495,6 @@ ID приложения
 | String
 | Mandatory +
 ID карты
-
 
 |===
 
@@ -490,7 +510,15 @@ ID карты
 ....
 ===== Example request
 ----
-PATCH http://.../cards/0000000000000001
+PATCH /cards/0000000000000001 HTTP/1.1
+Host: money.alfabank.ru 
+Authorization:
+Content-Type: 
+Content-Length: 
+customerId: AHQFFT
+applicationId: ac-p2p
+
+name=card1
 ----
 ===== Example response
 ----
