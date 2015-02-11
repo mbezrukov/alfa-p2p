@@ -142,7 +142,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 |===
 | Метод | Описание
 
-| `GET /cards`
+| https://github.com/mbezrukov/alfa-p2p/blob/master/cards.asciidoc#%D0%9C%D0%B5%D1%82%D0%BE%D0%B4-get-cards [GET /cards]
 | Получение списка карт пользователя
 
 | `GET /cards/{cardId}`
