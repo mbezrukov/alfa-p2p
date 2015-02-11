@@ -1,12 +1,6 @@
 = REST Cards
 :toc: left
-
-
-[source]
-----
-HTTP/1.1 200 OK
-----
-
+:source-highlighter: highlightjs
 
 
 [[Overview]]
@@ -48,6 +42,10 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | expirationMonth
 | Integer
 | Месяц окончания срока действия
+
+| cvv
+| Integer
+| CVV карты
 
 | lastTransactionDate
 | Date
@@ -121,6 +119,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
     "number": "5154 **** 4025",
     "expirationYear": "15",
     "expirationMonth": "07",
+    "cvv": null,
     "lastTransactionDate": "2015-12-15",
     "paymentSystem": "MC",
     "account": {
@@ -244,6 +243,7 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
     "number": "5154 **** 4025",
     "expirationYear": "15",
     "expirationMonth": "07",
+    "cvv": null,
     "lastTransactionDate": "2015-01-15",
     "paymentSystem": "MC",
     "account": {
@@ -270,6 +270,7 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
     "number": "5154 **** 4040",
     "expirationYear": "15",
     "expirationMonth": "07",
+    "cvv": null,    
     "lastTransactionDate": "2015-01-15",
     "paymentSystem": "MC",
     "account": {
@@ -318,6 +319,7 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
     "expirationYear": "15",
     "expirationMonth": "07",
     "lastTransactionDate": "2015-01-15",
+    "cvv": null,
     "paymentSystem": "MC",
     "account": {
       "href": "http://.../accounts/...",
@@ -343,6 +345,7 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
     "number": "5154 **** 4070",
     "expirationYear": "15",
     "expirationMonth": "07",
+    "cvv": null,
     "lastTransactionDate": "2015-01-15",
     "paymentSystem": "MC",
     "account": {
@@ -419,6 +422,7 @@ GET http://.../cards/0000000000000003
   "number": "5154 **** 4052",
   "expirationYear": "15",
   "expirationMonth": "07",
+  "cvv": null,
   "lastTransactionDate": "2015-01-15",
   "paymentSystem": "MC",
   "account": {
