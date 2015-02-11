@@ -523,6 +523,7 @@ HTTP/1.1 200 OK
   сохраняется новое название карты.
 ....
 ===== Example request
+[source, json]
 ----
 PATCH /cards/0000000000000001 HTTP/1.1
 Host: money.alfabank.ru 
@@ -537,6 +538,7 @@ applicationId: ac-p2p
 }
 ----
 ===== Example response
+[source, java]
 ----
 HTTP/1.1 200 OK
 ----
