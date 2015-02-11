@@ -7,12 +7,6 @@
 Сервис предназначен для работы с объектом Card.
 
 
-[listing]
-Сервис предназначен для работы с объектом Card.
-
-[quote]
-Сервис предназначен для работы с объектом Card.
-
 === JSON schema
 
 https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema] 
@@ -169,17 +163,17 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 
 | customerId
 | String
-| *Mandatory* +
+| Mandatory +
 Мнемоника пользователя и мнемоника местоположения
 
 | applicationId
 | String
-| *Mandatory* + 
+| Mandatory + 
 ID приложения
 
 | mode
 | String
-| *Mandatory* +
+| Mandatory +
 Режим работы ("all" - карты приложения + карты Альфа-Банка)
 
 |===
@@ -191,26 +185,26 @@ ID приложения
 
 | verificationMethod
 | String
-| *Optional* +
+| Optional +
 Статус верификации карты ("3DSecure", "hold", "notverify") +
 По умолчанию: "3DSecure" +
 
 | deleted
 | Boolean
-| *Optional* +
+| Optional +
 Включать карты, удаленные пользователем? (true/false) +
 По умолчанию: false
 
 | blocked
 | Boolean
-| *Optional* +
+| Optional +
 Включать заблокированные карты? (true/false) +
 По умолчанию: false
 
 
 | active
 | Boolean
-| *Optional* +
+| Optional +
 Включать неактивные и просроченные карты? (true/false) +
 По умолчанию: false
 
@@ -368,32 +362,32 @@ GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&act
 
 ===== Параметры заголовков запросов
 |===
-| Параметр | Обязательность | По умолчанию | Описание | Тип
+| Параметр | Тип | Описание 
 
 | customerId
-| Mandatory
-| ---
-| Мнемоника пользователя и мнемоника местоположения
 | String
+| Mandatory +
+Мнемоника пользователя и мнемоника местоположения
+
 
 | applicationId
-| Mandatory
-| ---
-| ID приложения
 | String
+| Mandatory +
+ID приложения
+
 
 |===
 
 
 ===== Параметры строки запроса
 |===
-| Параметр | Обязательность | По умолчанию | Описание | Тип
+| Параметр | Тип | Описание 
 
 | Id
-| Mandatory
-| ---
-| ID карты
 | String
+| Mandatory +
+ID карты
+
 
 |===
 
@@ -442,32 +436,32 @@ GET http://.../cards/0000000000000003
 
 ===== Параметры заголовков запросов
 |===
-| Параметр | Обязательность | По умолчанию | Описание | Тип
+| Параметр | Тип | Описание 
 
 | customerId
-| Mandatory
-| ---
-| Мнемоника пользователя и мнемоника местоположения
 | String
+| Mandatory +
+Мнемоника пользователя и мнемоника местоположения
+
 
 | applicationId
-| Mandatory
-| ---
-| ID приложения
 | String
+| Mandatory +
+ID приложения
+
 
 |===
 
 
 ===== Параметры строки запроса
 |===
-| Параметр | Обязательность | По умолчанию | Описание | Тип
+| Параметр |  Тип | Описание 
 
 | Id
-| Mandatory
-| ---
-| ID карты
 | String
+| Mandatory +
+ID карты
+
 
 |===
 
