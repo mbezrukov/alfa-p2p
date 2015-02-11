@@ -1,95 +1,61 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "/",
-  "type": "object",
-  "properties": {
-    "object": {
-      "id": "object",
-      "type": "string"
-    },
-    "count": {
-      "id": "count",
-      "type": "string"
-    },
-    "data": {
-      "id": "data",
-      "type": "array",
-      "items": {
-        "id": "0",
+  "type": "array",
+  "items": {
+    "id": "0",
+    "type": "object",
+    "properties": {
+      "id": {
+        "id": "id",
+        "type": "string"
+      },
+      "direction": {
+        "id": "direction",
+        "type": "string"
+      },
+      "name": {
+        "id": "name",
+        "type": "null"
+      },
+      "alfabank": {
+        "id": "alfabank",
+        "type": "boolean"
+      },
+      "number": {
+        "id": "number",
+        "type": "string"
+      },
+      "expirationYear": {
+        "id": "expirationYear",
+        "type": "string"
+      },
+      "expirationMonth": {
+        "id": "expirationMonth",
+        "type": "string"
+      },
+      "lastTransactionDate": {
+        "id": "lastTransactionDate",
+        "type": "string"
+      },
+      "paymentSystem": {
+        "id": "paymentSystem",
+        "type": "string"
+      },
+      "account": {
+        "id": "account",
         "type": "object",
         "properties": {
-          "id": {
-            "id": "id",
+          "href": {
+            "id": "href",
             "type": "string"
           },
-          "direction": {
-            "id": "direction",
+          "balance": {
+            "id": "balance",
             "type": "string"
           },
-          "name": {
-            "id": "name",
-            "type": "null"
-          },
-          "alfabank": {
-            "id": "alfabank",
-            "type": "boolean"
-          },
-          "number": {
-            "id": "number",
-            "type": "string"
-          },
-          "expirationYear": {
-            "id": "expirationYear",
-            "type": "string"
-          },
-          "expirationMonth": {
-            "id": "expirationMonth",
-            "type": "string"
-          },
-          "lastTransactionDate": {
-            "id": "lastTransactionDate",
-            "type": "string"
-          },
-          "paymentSystem": {
-            "id": "paymentSystem",
-            "type": "string"
-          },
-          "account": {
-            "id": "account",
-            "type": "object",
-            "properties": {
-              "href": {
-                "id": "href",
-                "type": "string"
-              },
-              "balance": {
-                "id": "balance",
-                "type": "string"
-              },
-              "currency": {
-                "id": "currency",
-                "type": "object",
-                "properties": {
-                  "href": {
-                    "id": "href",
-                    "type": "string"
-                  },
-                  "code": {
-                    "id": "code",
-                    "type": "string"
-                  },
-                  "description": {
-                    "id": "description",
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            },
-            "additionalProperties": false
-          },
-          "bank": {
-            "id": "bank",
+          "currency": {
+            "id": "currency",
             "type": "object",
             "properties": {
               "href": {
@@ -100,12 +66,8 @@
                 "id": "code",
                 "type": "string"
               },
-              "name": {
-                "id": "name",
-                "type": "string"
-              },
-              "color": {
-                "id": "color",
+              "description": {
+                "id": "description",
                 "type": "string"
               }
             },
@@ -114,13 +76,47 @@
         },
         "additionalProperties": false
       },
-      "additionalItems": false
-    }
+      "bank": {
+        "id": "bank",
+        "type": "object",
+        "properties": {
+          "href": {
+            "id": "href",
+            "type": "string"
+          },
+          "code": {
+            "id": "code",
+            "type": "string"
+          },
+          "name": {
+            "id": "name",
+            "type": "string"
+          },
+          "color": {
+            "id": "color",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "direction",
+      "name",
+      "alfabank",
+      "number",
+      "expirationYear",
+      "expirationMonth",
+      "lastTransactionDate",
+      "paymentSystem",
+      "account",
+      "bank"
+    ]
   },
-  "additionalProperties": false,
+  "additionalItems": false,
   "required": [
-    "object",
-    "count",
-    "data"
+    "0"
   ]
 }
