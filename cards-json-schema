@@ -1,3 +1,5 @@
+[source, java]
+----
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "/",
@@ -33,6 +35,10 @@
       "expirationMonth": {
         "id": "expirationMonth",
         "type": "string"
+      },
+      "cvv": {
+        "id": "cvv",
+        "type": "null"
       },
       "lastTransactionDate": {
         "id": "lastTransactionDate",
@@ -84,8 +90,8 @@
             "id": "href",
             "type": "string"
           },
-          "code": {
-            "id": "code",
+          "id": {
+            "id": "id",
             "type": "string"
           },
           "name": {
@@ -109,6 +115,7 @@
       "number",
       "expirationYear",
       "expirationMonth",
+      "cvv",
       "lastTransactionDate",
       "paymentSystem",
       "account",
@@ -120,3 +127,4 @@
     "0"
   ]
 }
+----
