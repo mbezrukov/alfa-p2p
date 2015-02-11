@@ -96,10 +96,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | String
 | Название банка
 
-| countryCode
-| String
-| Код страны
-
 | color
 | String
 | Цвет банка
@@ -134,7 +130,6 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
         "href": "http://.../banks/...",
         "code": "0000001",
         "name": "Сбербанк",
-        "countryCode": "12",
         "color": "#000008"
       }
     },
@@ -231,6 +226,15 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
   те, с которых он ранее делал переводы (active = true и alfabank = false и direction = sender).
 ....
 ===== Example request
+
+----
+{
+  "customerId": "AHQFFT",
+  "applicationId": "p2p",
+  "mode": "all"
+}
+----
+
 ----
 GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender
 ----
