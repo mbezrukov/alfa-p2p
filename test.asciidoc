@@ -6,8 +6,8 @@
 | customerId
 | String
 | 
-* Mandatory +
-* Мнемоника пользователя и мнемоника местоположения
+Mandatory
+Мнемоника пользователя и мнемоника местоположения
 
 | applicationId
 | String
