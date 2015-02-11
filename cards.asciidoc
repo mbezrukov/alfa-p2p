@@ -6,6 +6,13 @@
 == Описание
 Сервис предназначен для работы с объектом Card.
 
+
+[listing]
+Сервис предназначен для работы с объектом Card.
+
+[quote]
+Сервис предназначен для работы с объектом Card.
+
 === JSON schema
 
 https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema] 
@@ -221,7 +228,6 @@ ID приложения
 ....
 ===== Example request
 
-*header*
 ----
 GET http://.../cards?verificationMethod=3DSecure&deleted=false&blocked=false&active=true&direction=sender
 ----
