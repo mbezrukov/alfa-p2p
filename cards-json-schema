@@ -104,10 +104,6 @@
                 "id": "name",
                 "type": "string"
               },
-              "countryCode": {
-                "id": "countryCode",
-                "type": "string"
-              },
               "color": {
                 "id": "color",
                 "type": "string"
