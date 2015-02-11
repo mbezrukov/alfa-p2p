@@ -453,7 +453,7 @@ HTTP/1.1 200 OK
     "currency": {
       "href": "http://.../currency/...",
       "code": "RUR",
-      "description": Рубль"
+      "description": "Рубль"
     }
   },
   "bank": {
