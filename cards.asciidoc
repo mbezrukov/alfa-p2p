@@ -69,6 +69,10 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
 | Integer
 | Остаток по основному счету
 
+| scale
+| Integer
+| Количество минорных единиц
+
 3+| Currency
 
 | currency
@@ -129,6 +133,7 @@ https://github.com/mbezrukov/alfa-p2p/blob/master/cards-json-schema[JSON schema]
     "account": {
       "href": "http://.../accounts/...",
       "balance": "1525050",
+      "scale": "2",
       "currency": {
         "href": "http://.../currency/...",
         "code": "USD",
@@ -266,6 +271,7 @@ HTTP/1.1 200 OK
     "account": {
       "href": "http://.../accounts/...",
       "balance": "1525050",
+      "scale": "2",
       "currency": {
         "href": "http://.../currency/...",
         "code": "RUR",
@@ -293,6 +299,7 @@ HTTP/1.1 200 OK
     "account": {
       "href": "http://.../accounts/...",
       "balance": "25000",
+      "scale": "2",
       "currency": {
         "href": "http://.../currency/...",
         "code": "RUR",
@@ -349,6 +356,7 @@ HTTP/1.1 200 OK
     "account": {
       "href": "http://.../accounts/...",
       "balance": "100050",
+      "scale": "2",
       "currency": {
         "href": "http://.../currency/...",
         "code": "RUR",
@@ -376,6 +384,7 @@ HTTP/1.1 200 OK
     "account": {
       "href": "http://.../accounts/...",
       "balance": "5000050",
+      "scale": "2",
       "currency": {
         "href": "http://.../currency/...",
         "code": "USD",
@@ -461,6 +470,7 @@ HTTP/1.1 200 OK
   "account": {
     "href": "http://.../accounts/...",
     "balance": "100050",
+    "scale": "2",
     "currency": {
       "href": "http://.../currency/...",
       "id": "RUR",
